@@ -1,0 +1,21 @@
+{
+  "name": "Create Account",
+  "description": "Create a account in HPE UAT",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "activeTab", "scripting", "tabs"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "content_scripts": [
+    {
+      "matches": ["https://uatc.buy.hpe.com/b2b/en/registerUser"],
+      "js": ["jquery-3.6.0.min.js", "contentScript.js"]
+    }
+  ]
+  
+}
